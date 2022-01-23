@@ -157,8 +157,8 @@ class Client(object):
         The port of the server connection; optional, defaults to 8080.
     """
 
-    def __init__(self, port: int = 8080):
-        self.url = 'http://localhost:%i' % port
+    def __init__(self, port: int = 8080, hostname: str = "localhost", protocol: str = "http"):
+        self.url = f"{protocol}://{hostname}:{port}"
         self.next_id = 1
 
     def __enter__(self):
